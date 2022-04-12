@@ -7,45 +7,33 @@ function App() {
       lastName:'Ali',
       email:'abc@gmail.com'
   })
-  const handleFirstName = (e) =>{
-    setPerson({
-      ...person,
-      firstName: e.target.value
-    });
-  }
-  const handleLastName = (e) =>{
-    setPerson({
-      ...person,
-      lastName: e.target.value
-    });
-  }
-  const handleEmail = (e) =>{
-    setPerson({
-      ...person,
-      email: e.target.value
-    });
-  }
+ const handleChange = (e) =>{
+  setPerson({
+    ...person,
+    [e.target.name]: e.target.value
+  });
+ }
   return (
     <>
       <label>
         First Name:
         <input 
           value={person.firstName}
-          onChange={handleFirstName}
+          onChange={handleChange}
           />
       </label>
       <label>
         Last Name:
         <input 
           value={person.lastName}
-          onChange={handleLastName}
+          onChange={handleChange}
           />
       </label>
       <label>
         Email:
         <input 
           value={person.email}
-          onChange={handleEmail}
+          onChange={handleChange}
           />
       </label>
       <p>
