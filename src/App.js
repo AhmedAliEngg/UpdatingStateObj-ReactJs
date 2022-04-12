@@ -8,13 +8,22 @@ function App() {
       email:'abc@gmail.com'
   })
   const handleFirstName = (e) =>{
-    person.firstName = e.target.value;
+    setPerson({
+      ...person,
+      firstName: e.target.value
+    });
   }
   const handleLastName = (e) =>{
-    person.lastName = e.target.value;
+    setPerson({
+      ...person,
+      lastName: e.target.value
+    });
   }
   const handleEmail = (e) =>{
-    person.email = e.target.value;
+    setPerson({
+      ...person,
+      email: e.target.value
+    });
   }
   return (
     <>
